@@ -1,1 +1,15 @@
-<p>busqueda works!</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Listado de películas</h1>
+        <app-tabla-pelicula (onEligePelicula)="detalle($event)" [peliculas]="peliculas" ></app-tabla-pelicula>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <h2>Detalle Pel&iacute;cula</h2>
+            <app-detalle-pelicula [pelicula]="pelicula"></app-detalle-pelicula>
+            <br>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,6 @@
+<div class="wrapper">
+    <div (click)="eligePelicula(pelicula)" *ngFor="let pelicula of peliculas">
+        <img [src]="pelicula.fotoPeliculaUrl">
+        <span>{{pelicula.nombre}}</span>
+    </div>
+</div>
