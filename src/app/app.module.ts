@@ -9,11 +9,19 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
+import { PeliculaAltaComponent } from './components/pelicula-alta/pelicula-alta.component';
+import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
+import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
+import { PeliculaListadoComponent } from './components/pelicula-listado/pelicula-listado.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    PeliculaAltaComponent,
+    ActorAltaComponent,
+    ActorListadoComponent,
+    PeliculaListadoComponent
   ],
   imports: [
     BrowserModule,
