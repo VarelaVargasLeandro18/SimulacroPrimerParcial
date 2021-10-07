@@ -1,1 +1,8 @@
-<p>actor-listado works!</p>
+  
+<ul class="list-group">
+    <li (click)="onElegirActor(actor)" class="list-group-item lh-condensed "
+        *ngFor="let actor of actores">
+        <span>{{actor.nombre}} </span>
+        <span> {{actor.apellido}}</span>
+    </li>
+</ul>

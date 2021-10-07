@@ -21,6 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AltaPeliculaComponent } from './components/alta-pelicula/alta-pelicula.component';
 import { TablaActorComponent } from './components/tabla-actor/tabla-actor.component';
 import { ActorPeliculaComponent } from './components/actor-pelicula/actor-pelicula.component';
+import { ActorDetalleComponent } from './components/actor-detalle/actor-detalle.component';
+import { PaisDetalleComponent } from './components/pais-detalle/pais-detalle.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { ActorPeliculaComponent } from './components/actor-pelicula/actor-pelicu
     TablaPaisesComponent,
     AltaPeliculaComponent,
     TablaActorComponent,
-    ActorPeliculaComponent
+    ActorPeliculaComponent,
+    ActorDetalleComponent,
+    PaisDetalleComponent
   ],
   imports: [
     BrowserModule,

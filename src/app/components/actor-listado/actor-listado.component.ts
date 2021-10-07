@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Actor } from 'src/app/models/actor';
+import { ActorService } from 'src/app/services/actor.service';
 
 @Component({
   selector: 'app-actor-listado',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actor-listado.component.css']
 })
 export class ActorListadoComponent implements OnInit {
+  @Output() public onSeleccionarActor : EventEmitter<Actor> = new EventEmitter<Actor>();
+  public actores? : Actor[];
 
-  constructor() { }
+  constructor(
+    private service : ActorService
+  ) { 
+    this.service.leer().subscribe( actores => this.actores = actores );
+  }
 
   ngOnInit(): void {
+  }
+
+  onElegirActor( actor : Actor ) {
+    this.onSeleccionarActor.emit(actor);
   }
 
 }
