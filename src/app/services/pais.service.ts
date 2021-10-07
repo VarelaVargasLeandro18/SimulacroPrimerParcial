@@ -1,19 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { LABM } from './labm';
+import { map } from 'rxjs/operators';
+import { Pais } from '../models/pais';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaisService {
 
-  private db : LABM;
-  private collection : string = "Paises";
+  constructor(private http: HttpClient) { }
 
-  constructor(
-    private firestore : AngularFirestore
-  ) { 
-    this.db = new LABM( this.firestore, this.collection );
+  getPaises() {
+    return this.http.get("https://restcountries.com/v3.1/all?fields=name,flags").pipe( 
+      map( (paises : any) => paises.map( ( pais : any ) => new Pais( pais.name.common, pais.flags.png ) ) ) 
+    )
+  }
+
+  getPaisByName(name: string) {
+    return this.http.get("https://restcountries.com/v3.1/name/"+name+"?fields=name,flags")
   }
   
 }

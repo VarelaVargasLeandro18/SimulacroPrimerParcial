@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Actor } from '../models/actor';
 import { LABM } from './labm';
 
 @Injectable({
@@ -13,7 +14,11 @@ export class ActorService {
   constructor(
     private firestore : AngularFirestore
   ) { 
-    this.db = new LABM( this.firestore, this.collection );
+    this.db = new LABM( this.firestore.collection<Actor>( this.collection ) );
+  }
+
+  altaActor ( actor : Actor ) {
+    return this.db.alta(actor);
   }
 
 }

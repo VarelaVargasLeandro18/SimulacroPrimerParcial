@@ -1,26 +1,29 @@
-import { AngularFirestore } from "@angular/fire/compat/firestore";
+import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/compat/firestore";
 
 export class LABM {
     
     constructor (
-        private db : AngularFirestore,
-        private collection : string
+        private db : AngularFirestoreCollection
     ) {}
 
     alta ( document : any ) {
-        return this.db.collection( this.collection ).add(document);
+        return this.db.add({...document})
     }
 
     baja ( id : any ) {
-        return this.db.collection( this.collection ).doc( id ).delete();
+        return this.db.doc( id ).delete()
     } 
 
     modificacion ( id : any, document : any ) {
-        return this.db.collection( this.collection ).doc( id ).update( document );
+        return this.db.doc( id ).update( {...document} )
     }
 
     leer () {
-        return this.db.collection( this.collection ).get();
+        return this.db.get()
+    }
+
+    leerAutomaticamente () {
+        return this.db.snapshotChanges()
     }
 
 }

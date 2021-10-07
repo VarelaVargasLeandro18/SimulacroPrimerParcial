@@ -16,6 +16,9 @@ import { PeliculaListadoComponent } from './components/pelicula-listado/pelicula
 import { BienvenidoComponent } from './components/bienvenido/bienvenido.component';
 import { TablaPeliculaComponent } from './components/tabla-pelicula/tabla-pelicula.component';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
+import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
     PeliculaListadoComponent,
     BienvenidoComponent,
     TablaPeliculaComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    TablaPaisesComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
