@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Actores</span>
+            </h4>
+            <app-tabla-actor (onSeleccionarActor)="elegirActor($event)"></app-tabla-actor>
+
+        </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Alta Película</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">Nombre</label>
+                        <br>
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="nombre" placeholder="" value="" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="tipo">Tipo</label>
+                        <br>
+                        <select name="tipo" [(ngModel)]="tipo">
+                            <option value="terror">Terror</option>
+                            <option value="comedia">Comedia</option>
+                            <option value="amor">Amor</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="start">Fecha de estreno </label>
+                    <br>
+                    <input type="date" name="fechaDeEstreno" value="" min="1878-01-01" max="" [(ngModel)]="fechaDeEstreno" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cantidadPublico">Cantidad de Público</label>
+                    <br>
+                    <input type="number" name="cantidadDePublico" min="0" class="form-control" [(ngModel)]="cantidadDePublico" value="" required>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="actor">Actor</label>
+                    <br>
+                    <input type="text" name="actorNombre" readonly=true class="form-control" [(ngModel)]="actorNombre" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="photo">Foto de la película</label>
+                    <br>
+                    <input type="file" name="imagen" name="file" (input)="onSubirArchivo($event)" accept=".jpeg,.jpg,.png,.svg" />
+                    <br />
+
+                    <img [src]="imageUrl" onerror="this.onerror=null;this.src='assets/noimage.png';"
+                        width="300px" height="300px" />
+
+                    <br />
+
+                    <span class="text-warning">{{ imageUrl }}</span>
+
+                    <div *ngIf="progressValue | async as val">
+                        <progress type="warning" [value]="val" style="height: 1rem; width: 100%" max="100"></progress>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="guardarPelicula()">Guardar película</button>
+            </form>
+            <span class="text-success">{{this.success}}</span>
+            <span class="text-danger">{{this.error}}</span>
+        </div>
+    </div>
+
+</div>

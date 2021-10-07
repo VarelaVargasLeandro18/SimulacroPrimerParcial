@@ -9,7 +9,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
-import { PeliculaAltaComponent } from './components/pelicula-alta/pelicula-alta.component';
 import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
 import { PeliculaListadoComponent } from './components/pelicula-listado/pelicula-listado.component';
@@ -19,19 +18,24 @@ import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-
 import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AltaPeliculaComponent } from './components/alta-pelicula/alta-pelicula.component';
+import { TablaActorComponent } from './components/tabla-actor/tabla-actor.component';
+import { ActorPeliculaComponent } from './components/actor-pelicula/actor-pelicula.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusquedaComponent,
-    PeliculaAltaComponent,
     ActorAltaComponent,
     ActorListadoComponent,
     PeliculaListadoComponent,
     BienvenidoComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    AltaPeliculaComponent,
+    TablaActorComponent,
+    ActorPeliculaComponent
   ],
   imports: [
     BrowserModule,

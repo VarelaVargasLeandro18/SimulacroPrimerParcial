@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PeliculaAltaComponent } from './pelicula-alta.component';
+import { AltaPeliculaComponent } from './alta-pelicula.component';
 
-describe('PeliculaAltaComponent', () => {
-  let component: PeliculaAltaComponent;
-  let fixture: ComponentFixture<PeliculaAltaComponent>;
+describe('AltaPeliculaComponent', () => {
+  let component: AltaPeliculaComponent;
+  let fixture: ComponentFixture<AltaPeliculaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PeliculaAltaComponent ]
+      declarations: [ AltaPeliculaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PeliculaAltaComponent);
+    fixture = TestBed.createComponent(AltaPeliculaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,14 @@
+<ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+            <ul class="list-group mb-3 text-muted">
+                <li (click)="onElegirActor(actor)" class="list-group-item d-flex flex-column justify-content-between lh-condensed "
+                    *ngFor="let actor of actores">
+                    Nombre: <span>{{actor.nombre}}</span>
+                    Apellido: <span>{{actor.apellido}}</span>
+                    Pais: <span>{{actor.pais}}</span>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
